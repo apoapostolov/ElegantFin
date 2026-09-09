@@ -3785,6 +3785,104 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense > div:first-child {
     transform: translateY(3em);
 }
 
+/* Login background slideshow (from login-page-v2) */
+#loginPage {
+    --loginPageBgUrl: url("https://image.tmdb.org/t/p/original/fVsy8Z646SZUP6qLJrQCAwi0jhq.jpg");
+    --loginPageBackground: linear-gradient(var(--lighterGradientPointAlpha) 10%, var(--lighterGradientPoint)), var(--loginPageBgUrl);
+    background: var(--loginPageBackground);
+    animation: slideshow 1s infinite;
+}
+
+@keyframes slideshow {
+    0% {
+        --loginPageBgUrl: url("https://artworks.thetvdb.com/banners/v4/movie/355641/backgrounds/670008ff9a98b.jpg");
+    }
+
+    33% {
+        --loginPageBgUrl: url("https://artworks.thetvdb.com/banners/v4/movie/355641/backgrounds/664df612c7c31.jpg");
+    }
+
+    66% {
+        --loginPageBgUrl: url("https://artworks.thetvdb.com/banners/v4/movie/355641/backgrounds/67479e1c49c20.jpg");
+    }
+
+    100% {
+        --loginPageBgUrl: url("https://artworks.thetvdb.com/banners/v4/movie/355641/backgrounds/670008dd9f571.jpg");
+    }
+}
+#loginPage .padded-left.padded-right.padded-bottom-page {
+    background: var(--headerColor);
+    border-radius: var(--largeRadius);
+    backdrop-filter: blur(5px);
+    margin-top: 13em;
+}
+
+#loginPage::before {
+    content: var(--loginPageText);
+    position: absolute;
+    width: 100%;
+    width: 100svw;
+    max-width: 28em;
+    display: block;
+    margin: auto;
+    top: -1em;
+    line-height: 2em;
+    font-size: 1.5em;
+    font-weight: 800;
+    color: white;
+    text-align: center;
+    background: url(./assets/img/banner-light.png);
+    white-space: pre;
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#loginPage .padded-left.padded-right.padded-bottom-page:has(.visualLoginForm.hide) {
+    width: 24em;
+    padding: 2em 2em 1em 2em !important;
+    margin-inline: 1em !important;
+}
+
+#loginPage .padded-left.padded-right.padded-bottom-page:has(.manualLoginForm.hide) {
+    width: 100%;
+    max-width: 35em;
+    padding: 2em 1em 1em 1em !important;
+    margin-inline: 1em !important;
+}
+
+#loginPage .padded-left.padded-right.padded-bottom-page:has(.manualLoginForm.hide) .readOnlyContent {
+    max-width: 24em;
+    padding: 0em 1em 0em 1em !important;
+}
+
+@media (max-width: 50em) {
+    #divUsers {
+        max-height: 16em;
+        max-height: 35svh;
+        overflow-y: auto;
+    }
+}
+
+#divUsers {
+    padding-block: 2em;
+}
+
+#divUsers .cardBox.cardBox-bottompadded {
+    margin: auto !important;
+}
+
+#divUsers .cardScalable {
+    border-radius: 50% !important;
+    border-width: var(--borderWidth) !important;
+    transition: transform .125s;
+}
+
+#divUsers button:hover .cardScalable {
+    transform: scale(1.06);
+    filter: brightness(1.1);
+}
+
 .manualLoginForm .sectionTitle,
 .visualLoginForm > h1 {
     display: none;
@@ -3814,10 +3912,21 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense > div:first-child {
     color: var(--fullContrastColor);
     text-align: center;
 }
+#loginPage .readOnlyContent {
+    margin: .5em auto 0em !important;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "row1-1 row1-2"
+        "row2-1 row2-2"
+        "row3-1 row3-2"
+        "row4-1 row4-2";
+    gap: .5em .75em;
+}
 
-.manualLoginForm,
-.visualLoginForm {
-    position: relative;
+/* .btnForgotPassword {
+    font-size: .8em;
 }
 
 #quickConnectPreferencesPage .padded-left.padded-right.padded-bottom-page {
@@ -3825,6 +3934,21 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense > div:first-child {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+.btnQuick {
+    font-size: .8em;
+} */
+
+.btnManual {
+    grid-area: row1-1 / span 2;
+}
+
+.btnSelectServer {
+    grid-area: row3-1 / span 2;
+}
+
+.loginDisclaimerContainer {
+    grid-area: row4-1 / span 2;
 }
 
 #txtLoginDisclaimer {

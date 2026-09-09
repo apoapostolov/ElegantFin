@@ -24,8 +24,10 @@ If applicable, add screenshots to help explain your problem.
 **ElegantFin:**
  - Version [e.g. 24.12.01]
 
-**Jellyfin Server:**
- - Version [e.g. 10.10.3]
+**Jellyfin:**
+ - Version: [e.g. 10.10.3]
+ - Display Mode: [e.g. Desktop (Legacy)]
+ - Other Info:
 
 **Desktop:**
  - OS: [e.g. Windows]
@@ -36,9 +38,9 @@ If applicable, add screenshots to help explain your problem.
 **Smartphone or TV:**
  - Device: [e.g. iPhone6]
  - OS: [e.g. iOS8.1]
- - Browser: [e.g. stock browser, safari]
+ - Browser: [e.g. chrome browser, safari]
  - Browser Version: [e.g. 22]
- - Jellyfin App Version: 
+ - Jellyfin App Version: [e.g. v2.6.3]
 
 
 **Are you using any plugins or extra CSS configuration**
